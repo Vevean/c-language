@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int A,B,C;
+	scanf("%d %d",&A,&B);
+	C=A*B;
+	while(C&&C%10==0){
+		C/=10;
+	}
+	do{
+		printf("%d",C%10);
+		C/=10;
+	}while(C);
+	return 0;
+}

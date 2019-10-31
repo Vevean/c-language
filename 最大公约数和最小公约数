@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    int M,N,t,a,b;
+    scanf("%d %d",&M,&N);
+    a=M*N;
+    do{
+        t=M%N;
+        M=N;
+        N=t;
+    }while(N!=0);
+    b=a/M;
+    printf("%d %d",M,b);
+    return 0;
+}

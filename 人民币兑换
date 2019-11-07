@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+	int n,one,two,five,count=0;
+	scanf("%d",&n);
+	for(five=1;five<1.5*100/5;five++)
+	{
+		for(two=1;two<1.5*100/2;two++)
+		{
+			for(one=1;one<1.5*100;one++)
+			{
+				if(150==one+2*two+5*five&&one+two+five==100)
+				{
+					printf("%d %d %d\n",five,two,one);
+                    count++;
+                    if(count==n)
+                    return 0;
+				}
+			}
+		}
+	}
+}

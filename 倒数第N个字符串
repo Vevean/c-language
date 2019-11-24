@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int total,temp;
+char ans[6];
+int main()
+{
+    int times,N;
+    scanf("%d %d",&times,&N);
+    total = pow(26,times);
+    temp = total - N;
+    int i = 0;
+    while(times--)
+    {
+        ans[i++] = 'a' + temp%26;
+        temp/=26;
+    }
+    for(int j = i - 1;j>=0;j--) printf("%c",ans[j]);
+    return 0;
+}

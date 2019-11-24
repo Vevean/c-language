@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+
+
+int main(){
+
+	int n,sum=0,t;
+
+	scanf("%d",&n);
+
+	char name[n][9];
+
+	int num[n];
+
+	for(int i=0;i<n;i++){
+
+		scanf("%s %d",name[i],&num[i]);
+
+	}
+
+	
+
+	for(int i=0;i<n;i++){
+
+		sum+=num[i];
+
+	}
+
+	int ave=sum/n/2,min=999;
+
+	printf("%d",ave);
+
+    for(int i=0;i<n;i++){
+
+		if(abs(num[i]-ave)<min){
+
+			min=abs(num[i]-ave);
+
+			t=i;
+
+		}
+
+	}
+
+	printf(" %s",name[t]);
+
+	return 0;
+
+}

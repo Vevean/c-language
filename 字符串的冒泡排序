@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+void sort(char a[200][11],int n,int k)
+{
+	char b[11];
+	int i=0,j;
+	for(i=0;i<k;i++)
+	{	
+		for(j=0;j<n-i-1;j++)
+		if(strcmp(a[j],a[j+1])>0) 
+		{	
+			strcpy(b,a[j]);
+			strcpy(a[j],a[j+1]);
+			strcpy(a[j+1],b);
+		}	
+	}
+	for(i=0;i<n;i++)
+	   printf("%s\n",a[i]);
+}
+int main()
+{	
+	char a[100][11];
+	int i,n,k;
+	scanf("%d%d",&n,&k);
+	for(i=0;i<n;i++)
+	{	
+		scanf("%s",a[i]);
+	}
+	sort(a,n,k);
+	return 0;
+}
+

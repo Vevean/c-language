@@ -1,0 +1,86 @@
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+int main()
+
+{
+
+    int number[10001];
+
+    int i,j;
+
+    for(i=0;i<=10000;i++)
+
+      number[i]=i;
+
+    number[0]=number[1]=0;
+
+    for(i=2;i<=10000;i++)
+
+    {
+
+        if(number[i])
+
+        {
+
+            for(j=2*i;j<=10000;j+=i)
+
+            {
+
+                number[j]=0;
+
+            }
+
+        }
+
+    }
+
+    double result=0;
+
+    int n,k;
+
+    int count=0;
+
+    scanf("%d%d",&n,&k);
+
+    i=n;
+
+    int flag=0;
+
+    while(count<k&&i!=1)
+
+    {
+
+        if(number[i]!=0)
+
+        {
+
+            if(flag)
+
+                printf("+");
+
+            printf("%d",i);
+
+            flag=1;
+
+            result+=i;
+
+            count++;
+
+ 
+
+        }
+
+        i--;
+
+    }
+
+    printf("=%.0f\n",result);
+
+ 
+
+    return 0;
+
+}

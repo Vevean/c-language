@@ -1,0 +1,10 @@
+//求多项式（3x2-4x+1)2+(3x2-4x+1)/2+5 的和
+#include<stdio.h>
+#define P (3*x*x-4*x+1)
+int main()
+{
+	int sum,x;
+	scanf("%d",&x);
+	sum=P*2+P/2+5;
+	printf("%d",sum);
+}

@@ -1,0 +1,21 @@
+float maxtwo(float x,float y)
+{
+	float z;
+	z=x>y?x:y;
+	return z;
+}
+float maxthree(float x,float y, float z)
+{
+	float max;
+	max=maxtwo(maxtwo(x,y),z);
+	return max;
+}
+#include"file1.c"
+#include"file2.c"
+void main()
+{
+	float x,y,z,max;
+	scanf("%f %f %f",&x,&y,&z);
+	max=maxthree(x,y,z);
+	printf("The max number is:%.0f",max);
+}

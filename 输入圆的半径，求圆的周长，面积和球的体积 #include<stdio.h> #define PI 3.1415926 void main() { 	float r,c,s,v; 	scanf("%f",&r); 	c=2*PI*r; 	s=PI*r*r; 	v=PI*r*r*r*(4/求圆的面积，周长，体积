@@ -1,0 +1,12 @@
+//输入圆的半径，求圆的周长，面积和球的体积
+#include<stdio.h>
+#define PI 3.1415926
+void main()
+{
+	float r,c,s,v;
+	scanf("%f",&r);
+	c=2*PI*r;
+	s=PI*r*r;
+	v=PI*r*r*r*(4/3);
+	printf("c=%.2f,s=%.2f,v=%.2f",c,s,v);
+}

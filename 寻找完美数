@@ -1,0 +1,36 @@
+#include<stdio.h>
+int sum(int x)
+{
+	int j,sum=0;
+	for(j=1;j<x;j++)
+		{
+			if(x%j==0)
+			{
+				sum+=j;
+			}
+		}
+	return sum;
+	}//求出这个数所有因子之和
+int main()
+{
+	int m,n,i,a,flag=0,t=0;
+	scanf("%d %d",&m,&n);
+	for(i=m;i<=n;i++)
+	{
+		a=sum(i);
+		if(a==i)
+		{
+			t++;
+			flag=1;
+		if(t==1)
+			printf("%d",i);
+		else
+			printf(" %d",i);
+		}
+	}
+	if(flag==0)
+	{
+		printf("None");
+	}
+	return 0;
+}

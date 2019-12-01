@@ -1,0 +1,32 @@
+#include<stdio.h>
+double flag(int x)
+{
+	if(x==0)
+	{
+		return 1.0;//0的阶乘为1 
+	}else{
+	double i,b=1;
+	for(i=1;i<=x;i++)
+	{
+		b*=i;
+	}
+	return b;
+	}
+}
+int main()
+{
+	double PI,sum=1.0,temp,eps,t=1;//t=1为浮点数？ 
+	int i;
+	scanf("%le",&eps);
+	for(i=1;;i++)
+	{
+		t*=(2*i+1);
+		temp=flag(i)/t;
+		sum+=temp;
+		if(temp<eps)
+		{
+			break;
+		}//控制循环结束 
+	}
+	printf("PI = %.5f",2*sum);
+}

@@ -1,0 +1,32 @@
+#include<stdio.h>
+#define PI 3.1415926535
+int main()
+{
+	int x;
+	double r,h;
+	while(1)
+	{
+	printf("1-Ball\n2-Cylinder\n3-Cone\nother-Exit\nPlease enter your command:\n");
+	scanf("%d",&x);
+	if(x==1)
+	{
+		printf("Please enter the radius:\n");
+		scanf("%lf",&r);
+		printf("%.2lf\n",(4*PI*r*r*r)/3);
+	}
+	else if(x==2)
+	{
+		printf("Please enter the radius and the height:\n");
+		scanf("%lf %lf",&r,&h);
+		printf("%.2lf\n",PI*r*r*h);
+	}
+	else if(x==3)
+	{
+		printf("Please enter the radius and the height:\n");
+		scanf("%lf %lf",&r,&h);
+		printf("%.2lf\n",PI*r*r*h/3);
+	}else{
+		break;
+	}
+}
+}

@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+	char name[20];
+	int count;
+ }stu[3]={{"fu",0},{"lu",0},{"shou",0}};
+ int main()
+ {
+ 	int m,i,j;
+ 	struct student t;
+ 	char name[20];
+ 	scanf("%d",&m);//有几票 
+ 	for(i=0;i<m;i++)
+ 	{
+ 		scanf("%s",&name);
+ 		for(j=0;j<3;j++)
+ 		{
+ 		if(strcmp(name,stu[j].name)==0)
+ 		{
+ 			stu[j].count++;
+		}
+ 		}
+	}
+	for(i=0;i<3-1;i++)
+	{
+		for(j=i+1;j<3;j++)
+		{
+			if(stu[i].count<stu[j].count)
+			{
+				t=stu[i];
+				stu[i]=stu[j];
+				stu[j]=t;
+			}
+		}
+	}
+	for(i=0;i<3;i++)
+	{
+		printf("%s %d",stu[i].name,stu[i].count);
+		printf("\n");
+	}
+ }

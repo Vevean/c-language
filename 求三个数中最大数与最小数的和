@@ -1,0 +1,25 @@
+#include<stdio.h>
+int findmax(int x,int y,int z)
+{
+	int t,max;
+	t=x>y?x:y;
+	max=t>z?t:z;
+	return max;
+}
+int findmin(int x,int y,int z)
+{
+	int t,min;
+	t=x<y?x:y;
+	min=t<z?t:z;
+	return min;
+}
+int main()
+{
+	int x,y,z,max,min;
+	scanf("%d %d %d",&x,&y,&z);
+	max=findmax(x,y,z);
+	min=findmin(x,y,z);
+	printf("Max+Min=%d",max+min);
+	return 0;
+
+}

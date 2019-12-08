@@ -1,0 +1,46 @@
+#include <stdio.h>
+int narcissistic( int number );
+void PrintN( int m, int n );
+int main()
+{
+    int m, n;
+    scanf("%d %d", &m, &n);
+    if ( narcissistic(m) ) printf("%d is a narcissistic number\n", m);
+    PrintN(m, n);
+    if ( narcissistic(n) ) printf("%d is a narcissistic number\n", n);
+    return 0;
+}
+int narcissistic( int number )
+{ 	int integer,count,digit,power,powersum,j,i;
+	integer=number;
+	count=0;
+	while(integer!=0)
+	{
+		integer=integer/10;
+		count++;
+	}//求位数 
+	powersum=0;
+	integer=number;//初始化
+	for(i=0;i<count;i++)
+	{
+		digit=integer%10;//求出最后一位数，digit记录最后一位数
+		integer=integer/10;//去掉最后一位数
+		power=1;//每次置为1
+		for(j=0;j<count;j++)
+		power*=digit;	//power记录的是每次最后一位数的N次幂
+		powersum+=power;//powersum记录每次最后一位数的N次幂的和
+	}
+	if(powersum==number)
+	return 1;
+	else
+	return 0;
+} 
+void PrintN( int m, int n )
+{
+	int i;
+	for(i=m+1;i<n;i++)
+	{
+		if(narcissistic(i)==1)
+		printf("%d\n",i);
+}
+} 

@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+	int h,m,s,n;
+	scanf("%d:%d:%d",&h,&m,&s);
+	scanf("%d",&n);
+	if(s+n<60)
+	{
+		printf("%02d:%02d:%02d",h,m,s+n);
+	}else{
+		s=s+n-60;
+		m++;
+		if(m<60)
+		{
+			printf("%02d:%02d:%02d",h,m,s);
+		}else{
+			m=m-60;
+			h++;
+			{
+				if(h<24)
+				{
+					printf("%02d:%02d:%02d",h,m,s);
+				}else{
+					h=h-24;
+					printf("%02d:%02d:%02d",h,m,s);
+				}
+			}
+		}
+	}
+}

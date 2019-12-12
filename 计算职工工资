@@ -1,0 +1,21 @@
+#include<stdio.h>
+struct people
+{
+	char name[100];
+	double basic;
+	double act;
+	double pay;
+	double fact;
+}s[1000];
+int main()
+{
+	int N,i;
+	scanf("%d",&N);
+	for(i=0;i<N;i++)
+	{
+		scanf("%s %lf %lf %lf",&s[i].name,&s[i].basic,&s[i].act,&s[i].pay);
+		s[i].fact=s[i].basic+s[i].act-s[i].pay;
+	}
+	for(i=0;i<N;i++)
+	printf("%s %.2lf\n",s[i].name,s[i].fact);	
+}

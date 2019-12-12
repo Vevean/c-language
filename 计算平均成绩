@@ -1,0 +1,26 @@
+#include<stdio.h>
+struct student
+{
+	char num[10];
+	char name[10];
+	int score;
+}stu[100];
+int main()
+{
+	int N,sum=0,i;
+	double average=0.0;
+	scanf("%d",&N);
+	for(i=0;i<N;i++)
+	{
+		scanf("%s %s %d",&stu[i].num,&stu[i].name,&stu[i].score);
+		sum+=stu[i].score;
+	}
+	average=sum/N;
+	printf("%.2lf\n",average);
+	for(i=0;i<N;i++)
+	{
+	if(stu[i].score<average)
+	printf("%s %s\n",stu[i].name,stu[i].num);
+	}
+	return 0;
+}

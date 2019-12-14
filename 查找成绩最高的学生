@@ -1,3 +1,4 @@
+查找成绩最高的学生
 #include<stdio.h>
 struct student
 {
@@ -25,3 +26,35 @@ int main()
 	printf("%d %d",stu[t].num,stu[t].score);
 	
 }
+找出总分最高的学生
+#include<stdio.h>
+struct student
+{
+	char num[10];
+	char name[100];
+	int score[3];
+	int all;
+ }stu[100];
+ int main()
+ {
+ 	int n,i,max,t;
+ 	scanf("%d",&n);
+ 	for(i=0;i<n;i++)
+ 	{
+ 		scanf("%s %s %d %d %d",&stu[i].num,&stu[i].name,&stu[i].score[0],&stu[i].score[1],&stu[i].score[2]);
+	}
+	for(i=0;i<n;i++)
+	{
+		stu[i].all=stu[i].score[0]+stu[i].score[1]+stu[i].score[2];
+	}
+	max=stu[0].all;
+	for(i=1;i<n;i++)
+	{
+		if(stu[i].all>max)
+		{
+			max=stu[i].all;
+			t=i;
+		}
+	}
+	printf("%s %s %d",stu[t].name,stu[t].num,stu[t].all);
+ }

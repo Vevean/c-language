@@ -1,0 +1,27 @@
+#include<stdio.h>
+struct student
+{
+	int num;
+	int score;
+}stu[100];
+int main()
+{
+	int n,i,t,max;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&stu[i].num);
+		scanf("%d",&stu[i].score);
+	}
+	max=stu[0].score;
+	for(i=1;i<n;i++)
+	{
+		if(max<stu[i].score)
+		{
+			max=stu[i].score;
+			t=i;
+		}
+	}
+	printf("%d %d",stu[t].num,stu[t].score);
+	
+}

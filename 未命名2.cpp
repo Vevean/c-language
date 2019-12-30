@@ -1,32 +1,20 @@
 #include<stdio.h>
-flag(int *array,int n)
+#include<stdlib.h>
+#include<string.h>
+int main()
 {
-	int i,j,t;
-	for(i=0;i<n-1;i++)
+	char a[4][20],b[10];
+	int i;
+	for(i=0;i<4;i++)
 	{
-		for(j=i+1;j<n;j++)
-		{
-			if(array[i]>array[j])
-			{
-				t=array[i];
-				array[i]=array[j];
-				array[j]=t;
-			}
-		}
+	scanf("%s",a[i]);	
 	}
-}
-	int main()
+	for(i=0;i<4;i++)
 	{
-		int a[5],i;
-		for(i=0;i<5;i++)
-		{
-			scanf("%d",&a[i]);
-		}
-		flag(a,5);
-		for(i=0;i<5;i++)
-		{
-			printf("%d",a[i]);
-		}
+		b[2*i]=a[i][0];
+		b[2*i+1]=a[i][1];
 	}
-	
-
+	b[2*i]='\0';
+	printf("%s\n",b);
+	return 0;
+} 

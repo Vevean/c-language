@@ -1,22 +1,22 @@
 #include<stdio.h>
 int main()
 {
-	int n,one,two,five,count=0;
+	int x,y,z;
+	int n,count=0;
 	scanf("%d",&n);
-	for(five=1;five<1.5*100/5;five++)
+	for(x=1;x<30;x++)
 	{
-		for(two=1;two<1.5*100/2;two++)
+		for(y=1;y<75;y++)
 		{
-			for(one=1;one<1.5*100;one++)
+			for(z=1;z<150;z++)
 			{
-				if(150==one+2*two+5*five&&one+two+five==100)
+				if(x+y+z==100&&5*x+2*y+z==150)
 				{
-					printf("%d %d %d\n",five,two,one);
-                    count++;
-                    if(count==n)
-                    return 0;
+					count++;
+					if(count<=n)
+					printf("%d %d %d\n",x,y,z);
 				}
 			}
 		}
 	}
-}
+ } 

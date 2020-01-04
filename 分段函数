@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    float x;
+    scanf("%f",&x);
+    if(x<0&&x!=-3)
+    printf("%f",x);
+    else if(x>=0&&x<10&&x!=2&&x!=3)
+    printf("%f",x+1);
+    else
+    printf("%f",sin(3*x));
+    
+}

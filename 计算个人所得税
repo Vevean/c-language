@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int money;
+	double rate;
+	scanf("%d",&money);
+	if(money<=1600)
+	{
+		rate=0;
+	}else if(money>1600&&money<=2500)
+	{
+		rate=0.05*(money-1600);
+	}else if(money>2500&&money<=3500)
+	{
+		rate=0.1*(money-1600);
+	}else if(money>3500&&money<=4500)
+	{
+		rate=0.15*(money-1600);
+	}else if(money>4500)
+	{
+		rate=0.2*(money-1600);
+	}
+	printf("%.2lf",rate);
+}

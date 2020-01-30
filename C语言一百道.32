@@ -1,0 +1,25 @@
+//32.题目：利用递归函数调用方式，将所输入的5个字符，以相反顺序打印出来。
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+/*
+
+【分析】递归最重要的是压栈和出栈的顺序
+
+*/
+void fun(void)
+{
+	char c;
+	if ((c = getchar()) != '\n')  //出栈条件
+	{
+		fun();
+	}
+	if (c != '\n')  //出栈
+	{
+		printf("%c", c);
+	}
+}
+int main(void){
+	printf("请输入5个字符\n");
+	fun();
+	return 0;
+}
